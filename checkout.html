@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+<div class="checkout-wrapper">
+  <div class="checkout-card">
+    <header class="checkout-header">
+      <h1>Finalizar <span class="text-red">Compra</span></h1>
+      <p>Selecciona tu método de entrega y completa tu pedido</p>
+    </header>
+
+    <div class="selector-metodo">
+      <input type="radio" name="tipo-compra" value="tienda" id="opt-tienda" hidden>
+      <label for="opt-tienda" class="metodo-card">
+        <span class="icon">🏢</span>
+        <span class="label">Recojo en Tienda</span>
+      </label>
+
+      <input type="radio" name="tipo-compra" value="delivery" id="opt-delivery" hidden>
+      <label for="opt-delivery" class="metodo-card">
+        <span class="icon">🛵</span>
+        <span class="label">Delivery</span>
+      </label>
+    </div>
+
+    <div id="tienda" class="panel-info" style="display:none;">
+  <h3><span class="dot"></span> Elige el punto de recojo</h3>
+  <div class="locales-grid">
+    <!--
+    <input type="radio" name="local" value="Local 1" id="loc1" hidden>
+    <label for="loc1" class="local-card">
+      <div class="card-icon">📍</div>
+      <div class="card-content">
+        <strong>Huancayo - UPLA</strong>
+        <p>Jupiter y Cometa (Al frente del Parque de las Aguas)</p>
+        <span class="badge">Disponible</span>
+      </div>
+      <div class="select-indicator"></div>
+    </label>-->
+
+    <input type="radio" name="local" value="Local 2" id="loc2" hidden>
+    <label for="loc2" class="local-card">
+      <div class="card-icon">📍</div>
+      <div class="card-content">
+        <strong>Sta. Isabel - Av. Orión</strong>
+        <p>Mz S lote 22 - Cooperativa Santa Isabel</p>
+        <span class="badge">Disponible</span>
+      </div>
+      <div class="select-indicator"></div>
+    </label>
+
+  </div>
+</div>
+
+    <div id="delivery" class="panel-info" style="display:none;">
+  <h3><span class="dot"></span> Datos de Entrega</h3>
+  <div class="form-grid">
+    <div class="input-field">
+      <input type="text" name="nombre" id="delivery-nombre" placeholder="Nombre completo" required>
+    </div>
+    <div class="input-field">
+      <input type="text" name="direccion" id="delivery-direccion" placeholder="Dirección exacta" required>
+    </div>
+    <div class="input-field">
+      <input type="tel" name="telefono" id="delivery-telefono" placeholder="Número celular" required>
+    </div>
+  </div>
+</div>
+
+    <footer class="checkout-footer">
+      <div class="total-container">
+        <span class="total-label">TOTAL A PAGAR</span>
+        <span class="total-amount">S/ <span id="totalCompra">0.00</span></span>
+      </div>
+
+      <div class="payment-instructions">
+  <p>
+    PASO 1 <br>
+    Realiza tu pago vía Yape y enviar al <br>
+    <strong>WHATSAPP</strong>
+  </p>
+
+  <div class="yape-container">
+    <div class="yape-number" id="numeroYape">906 731 710</div>
+    <button class="btn-copiar" onclick="copiarNumero()">
+      Copiar número
+    </button>
+  </div>
+
+  <span id="copiadoMsg">Copiado ✔</span>
+</div>
+
+      <div class="button-group">
+        <button id="generarPDF" class="btn btn-dark">PASO 2 <br>Descargar Boleta y enviar al WHATSAPP</button>
+        <button id="btnWhatsapp" class="btn btn-whatsapp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20"> PASO 3 <br>
+           WHATSAPP
+        </button>
+        <button class="btn-back" onclick="location.href='index.html'">Regresar a la tienda</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script src="checkout.js"></script>
+</body>
+</html>

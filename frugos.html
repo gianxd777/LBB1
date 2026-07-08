@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Licorería La Botella Borracha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo 12+.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <!-- Barra de navegación (solo HTML; el alineado requiere CSS) -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo (arriba en móvil, izquierda en PC) -->
+            <div class="nav-logo">
+                <a href="index.html">Licorería La Botella Borracha</a>
+            </div>
+
+            <!-- Menú escritorio -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="https://gianxd777.github.io/Licoreria_La_Botella_Borracha1/blog.html">Sobre nosotros</a></li>
+
+                <!-- Productos con submenú -->
+                <li class="has-submenu">
+                    <a href="">Productos</a>
+                    <ul class="submenu">
+                        <li><a href="Whisky.html">Whisky</a></li>
+                        <li><a href="ron.html">Ron</a></li>
+                        <li><a href="vodka.html">Vodka</a></li>
+                        <li><a href="vinos.html">Vinos</a></li>
+                        <li><a href="cervezas.html">Cervezas</a></li>
+                        <li><a href="gasificadas.html">Gasificadas con alcohol</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="">SIN ALCOHOL</a>
+                    <ul class="submenu">
+                        <li><a href="mineral.html">Agua Mineral</a></li>
+                        <li><a href="ron.html">Energisantes</a></li>
+                        <li><a href="vodka.html">Gaseosas</a></li>
+                        <li><a href="cervezas.html">Vapes</a></li>
+                        <li><a href="snacks.html">Snacks</a></li>
+                        <li><a href="gasificadas.html">Frugos</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="combos.html">Combos</a></li>
+            </ul>
+
+
+            <!-- Iconos PC -->
+            <div class="nav-icons desktop-icons">
+                <a href="construccion.html" aria-label="Perfil"><i class="fa fa-user"></i></a>
+
+                <!-- Botón para abrir carrito -->
+                <a href="#" id="abrirCarrito" aria-label="Carrito"><i class="fa fa-shopping-cart"></i></a>
+
+                <!-- Carrito lateral -->
+
+            </div>
+
+        </nav>
+        <div id="carritoSidebar" class="carrito-sidebar">
+            <div class="carrito-header">
+                <h3>🛒 Mi carrito</h3>
+                <button id="cerrarCarrito">&times;</button>
+            </div>
+            <div class="carrito-items"></div>
+
+            <div class="carrito-footer">
+                <p>Total: S/ <span id="carritoTotal">0.00</span></p>
+                <button id="finalizarCompra">Finalizar</button>
+            </div>
+
+        </div>
+        <!-- Barra inferior móvil (hamburguesa + iconos) -->
+        <div class="mobile-bar">
+            <div class="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="nav-icons">
+                <a href="construccion.html" aria-label="Perfil"><i class="fa fa-user"></i></a>
+                <a href="#" aria-label="Carrito"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="mobile-menu">
+    <div class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="sobre_nosotros.html">Sobre nosotros</a>
+        <a href="#" class="productos-btn" id="btn-alcohol">Productos</a>
+        <a href="#" class="productos-btn" id="btn-sin-alcohol">SIN ALCOHOL</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="combos.html">Combos</a>
+    </div>
+
+    <div class="menu-categorias" id="menu-alcohol">
+        <a href="#" class="volver-btn"><i class="fa fa-arrow-left"></i> Volver</a>
+        <a href="Whisky.html">Whisky</a>
+        <a href="ron.html">Ron</a>
+        <a href="vodka.html">Vodka</a>
+        <a href="vinos.html">Vinos</a>
+        <a href="cervezas.html">Cervezas</a>
+        <a href="gasificadas.html">Gasificadas con alcohol</a>
+    </div>
+
+    <div class="menu-categorias" id="menu-sin-alcohol">
+        <a href="#" class="volver-btn"><i class="fa fa-arrow-left"></i> Volver</a>
+        <a href="mineral.html">Agua Mineral</a>
+        <a href="energizantes.html">Energizantes</a>
+        <a href="gaseosas.html">Gaseosas</a>
+        <a href="vapes.html">Vapes</a>
+        <a href="snacks.html">Snacks</a>
+        <a href="frugos.html">Frugos</a>
+    </div>
+</div>
+
+    </header>
+
+
+
+
+    <main>
+
+
+        <div class="search-bar-global">
+    <div class="search-input-wrapper">
+        <input type="text" id="buscadorGlobal" placeholder="Buscar productos..." autocomplete="off">
+        <i class="fa fa-search"></i>
+        <button type="button" id="limpiarBusqueda" class="limpiar-busqueda" aria-label="Limpiar busqueda">&times;</button>
+    </div>
+    <div id="resultadosBuscador" class="resultados-buscador"></div>
+</div>
+        
+
+        <!-- Bloque de 4 productos (1) -->
+
+
+        <section aria-labelledby="titulo-productos-1">
+
+            
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            <article data-producto-id="">
+                <img src="" alt="">
+                <figcaption>
+                    <h3></h3>
+                    <div class="precio-container">
+                        <del>S/ 12.00</del>
+                        <strong>S/ 8.00</strong>
+                    </div>
+                    <button aria-label="Agregar al carrito">Agregar al Carrito</button>
+                </figcaption>
+            </article>
+
+            
+
+            
+            
+            
+
+            
+
+
+
+
+        </section>
+
+       
+        
+        
+
+
+
+
+
+
+
+        
+
+            
+
+            
+
+            
+
+
+        
+
+
+
+
+
+        
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+            <!-- Sobre nosotros -->
+            <section>
+                <h3>Sobre nosotros</h3>
+                <p>
+                    Somos <strong>Licorería La Botella Borracha</strong>, especialistas en licores nacionales
+                    e importados. Calidad y rapidez en cada entrega 🍷.
+                </p>
+            </section>
+
+              
+            <section>
+                <h3>Locales</h3>
+                <ul>
+                    <li>📍 Huancayo - cooperativa Santa Isabel - Av. orion Mz S lote 22</li>
+                </ul>
+            </section>
+
+            <!-- Horario -->
+            <section>
+                <h3>Horario de atención</h3>
+                <p>
+                    Lunes a Viernes: 9:00 am - 12:00 pm <br>
+                    Sábados: 10:00 am - 11:00 pm <br>
+                </p>
+            </section>
+
+            <!-- Redes sociales -->
+            <section>
+                <h3>Síguenos</h3>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=100066950823371" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/la.botella.borracha/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@la.botella.borracha?_t=ZS-8zR1WZFpI5V&_r=1" target="blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
+                </div>
+
+            </section>
+
+            <!-- Soporte y ayuda -->
+            <section>
+                <h3>Soporte y ayuda</h3>
+                <ul class="reclamos">
+                    <li><a href="construccion.html" target="_blank" rel="noopener">📩 Reclamos por pedidos</a></li>
+                    <li><a href="construccion.html" target="_blank" rel="noopener">📦 Reclamos por entrega</a></li>
+                    <li><a href="construccion.html" target="_blank" rel="noopener">💳 Reclamos por pagos</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Copy -->
+        <div class="footer-copy">
+            &copy; 2025 Licorería La Botella Borracha. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
