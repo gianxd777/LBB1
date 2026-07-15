@@ -138,7 +138,7 @@ const FOOTER_HTML = `
         
     </div>
     
-    &copy; 2026 Licorería La Botella Borracha. Todos los derechos reservados.
+    &copy; 2024 Licorería La Botella Borracha. Todos los derechos reservados.
     <br>
     Desarrollado por 
     <a href="https://gianxd777.github.io/Devcore_Comapany/" target="_blank" rel="noopener" style="color: #1d4ed8; text-decoration: none; font-weight: 600; transition: color 0.3s ease;">
