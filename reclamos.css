@@ -1,0 +1,303 @@
+:root {
+  --primary: #25D366;
+  --danger: #ef4444;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --bg-body: #f9fafb;
+  --card-bg: #ffffff;
+  --radius: 12px;
+  --color-rojo: #df2e2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.reclamos-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+.reclamos-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+  max-width: 640px;
+  width: 100%;
+}
+
+.reclamos-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.reclamos-header h1 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px;
+}
+
+.text-red {
+  color: var(--color-rojo);
+}
+
+.reclamos-header p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Datos de la Empresa y Correlativo */
+.empresa-datos {
+  background-color: #f3f4f6;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 16px 0;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.empresa-datos p {
+  margin: 4px 0 !important;
+  color: var(--text-main) !important;
+}
+
+.hoja-reclamacion-info {
+  border: 2px dashed #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.hoja-reclamacion-info h2 {
+  font-size: 1.1rem;
+  margin: 0 0 5px;
+  color: var(--color-rojo);
+}
+
+.hoja-reclamacion-info p {
+  margin: 0 !important;
+  font-size: 0.85rem !important;
+}
+
+/* Títulos de sección y separadores */
+h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin: 24px 0 16px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 8px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 24px 0;
+}
+
+/* Selector Reclamo / Queja / Bien */
+.reclamos-tipo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tipo-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.tipo-card small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.tipo-icon {
+  font-size: 1.3rem;
+}
+
+/* Actualizado para funcionar con todos los radios ocultos */
+input[type="radio"]:checked + .tipo-card {
+  border-color: var(--color-rojo);
+  background: #fff5f5;
+}
+
+/* Grid de campos */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.campo-full {
+  grid-column: 1 / -1;
+}
+
+/* Se agregó el "select" a las reglas de los inputs */
+.input-field input,
+.input-field select,
+.input-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+  background-color: #fff;
+}
+
+.input-field input:focus,
+.input-field select:focus,
+.input-field textarea:focus {
+  border-color: var(--color-rojo);
+}
+
+.input-field select {
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+/* Checkboxes Legales */
+.reclamos-legales-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-rojo);
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.checkbox-text a {
+  color: var(--color-rojo);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.checkbox-text a:hover {
+  text-decoration: underline;
+}
+
+/* Texto legal */
+.reclamos-legal {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: #f3f4f6;
+  border-left: 3px solid var(--color-rojo);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.reclamos-legal p {
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.reclamos-legal ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.reclamos-legal li {
+  margin-bottom: 6px;
+}
+
+.reclamos-legal li:last-child {
+  margin-bottom: 0;
+}
+
+/* Botones */
+.reclamos-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-dark {
+  background: #111;
+  color: #fff;
+}
+
+.btn-whatsapp {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 560px) {
+  .form-grid,
+  .reclamos-tipo {
+    grid-template-columns: 1fr;
+  }
+
+  .reclamos-card {
+    padding: 20px;
+  }
+}

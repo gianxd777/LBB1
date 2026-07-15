@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Libro de Reclamaciones | Licorería La Botella Borracha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reclamos.css">
+    <link rel="icon" href="img/logo 12+.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="reclamos-wrapper">
+        <div class="reclamos-card">
+
+            <header class="reclamos-header">
+                <h1>Libro de <span class="text-red">Reclamaciones</span></h1>
+                <p>Conforme a lo establecido en el Código de la Protección y Defensa del Consumidor.</p>
+                
+                <!-- Datos obligatorios de la empresa -->
+                <div class="empresa-datos">
+                    <p><strong>Razón Social:</strong> [TU RAZÓN SOCIAL AQUÍ]</p>
+                    <p><strong>RUC:</strong> [TU RUC AQUÍ]</p>
+                    <p><strong>Dirección:</strong> [DIRECCIÓN DE TU LOCAL AQUÍ]</p>
+                </div>
+
+                <!-- Correlativo y Fecha (Obligatorio Indecopi) -->
+                <div class="hoja-reclamacion-info">
+                    <h2>HOJA DE RECLAMACIÓN N° <span id="numeroCorrelativo">000001-2026</span></h2>
+                    <p><strong>Fecha de registro:</strong> <span id="fechaActual"></span></p>
+                </div>
+            </header>
+
+            <form id="formReclamo" novalidate>
+
+                <!-- SECCIÓN 1: Identificación del Consumidor Reclamante -->
+                <h3>1. Identificación del Consumidor Reclamante</h3>
+                <div class="form-grid">
+                    <div class="input-field campo-full">
+                        <input type="text" id="nombre" placeholder="Nombres y apellidos completos" required>
+                    </div>
+                    <div class="input-field">
+                        <select id="tipoDocumento" required>
+                            <option value="" disabled selected>Tipo de Doc.</option>
+                            <option value="DNI">DNI</option>
+                            <option value="CE">Carné de Extranjería</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="documento" placeholder="Número de documento" required>
+                    </div>
+                    <div class="input-field campo-full">
+                        <input type="text" id="domicilio" placeholder="Domicilio completo" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" id="telefono" placeholder="Teléfono / celular" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="input-field campo-full">
+                        <input type="text" id="apoderado" placeholder="Apoderado (Solo si el reclamante es menor de edad)">
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- SECCIÓN 2: Identificación del Bien Contratado -->
+                <h3>2. Identificación del Bien Contratado</h3>
+                <div class="reclamos-tipo">
+                    <input type="radio" name="tipoBien" id="bienProducto" value="Producto" checked hidden>
+                    <label for="bienProducto" class="tipo-card">
+                        <span><strong>Producto</strong></span>
+                    </label>
+
+                    <input type="radio" name="tipoBien" id="bienServicio" value="Servicio" hidden>
+                    <label for="bienServicio" class="tipo-card">
+                        <span><strong>Servicio</strong></span>
+                    </label>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="input-field">
+                        <input type="number" id="monto" placeholder="Monto reclamado (S/)" min="0" step="0.10" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="comprobante" placeholder="N° de Boleta/Factura (Opcional)">
+                    </div>
+                    <div class="input-field campo-full">
+                        <input type="text" id="productoDescripcion" placeholder="Descripción del producto o servicio" required>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- SECCIÓN 3: Detalle de la Reclamación y Pedido del Consumidor -->
+                <h3>3. Detalle de la Reclamación y Pedido del Consumidor</h3>
+                <div class="reclamos-tipo">
+                    <input type="radio" name="tipoReclamo" id="tipoReclamoOpcion" value="Reclamo" checked hidden>
+                    <label for="tipoReclamoOpcion" class="tipo-card">
+                        <span class="tipo-icon">⚠️</span>
+                        <span>
+                            <strong>Reclamo</strong>
+                            <small>Disconformidad relacionada al producto o servicio</small>
+                        </span>
+                    </label>
+
+                    <input type="radio" name="tipoReclamo" id="tipoQuejaOpcion" value="Queja" hidden>
+                    <label for="tipoQuejaOpcion" class="tipo-card">
+                        <span class="tipo-icon">🗣️</span>
+                        <span>
+                            <strong>Queja</strong>
+                            <small>Disconformidad no relacionada a los productos o servicios</small>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="form-grid">
+                    <div class="input-field">
+                        <label for="fechaHecho" style="font-size: 0.85em; color: #666;">Fecha del suceso:</label>
+                        <input type="date" id="fechaHecho" required>
+                    </div>
+                    <div class="input-field campo-full">
+                        <textarea id="descripcion" rows="4" placeholder="Detalle del reclamo o queja" required></textarea>
+                    </div>
+                    <div class="input-field campo-full">
+                        <textarea id="pedido" rows="3" placeholder="Pedido (¿Qué solución espera?)" required></textarea>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Checkboxes Legales Obligatorios -->
+                <div class="reclamos-legales-checkboxes">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="declaracionVeracidad" required>
+                        <span class="checkbox-text">Declaro que los datos consignados son correctos y fieles a la verdad.</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="politicaDatos" required>
+                        <span class="checkbox-text">Autorizo el tratamiento de mis datos personales según la <a href="#">Política de Privacidad</a> (Ley N° 29733).</span>
+                    </label>
+                </div>
+
+                <div class="reclamos-legal">
+                    <p><strong>Aviso Importante:</strong></p>
+                    <ul>
+                        <li>La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</li>
+                        <li>El proveedor debe dar respuesta al reclamo o queja en un plazo no mayor a <strong>quince (15) días hábiles</strong> improrrogables.</li>
+                        <li>Al enviar, se generará una copia de esta hoja de reclamación que deberás guardar.</li>
+                    </ul>
+                </div>
+
+                <div class="reclamos-botones">
+                    <button type="button" id="btnDescargarPDF" class="btn btn-dark">
+                        📄 Descargar en PDF
+                    </button>
+                    <button type="submit" id="btnEnviarReclamo" class="btn btn-whatsapp">
+                        Enviar reclamo
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="reclamos.js"></script>
+</body>
+
+</html>
